@@ -55,6 +55,9 @@ export const SmoothieCreateCard: React.FC = () => {
 
     useEffect(() => {
         setIsExpanded(activeCardId === -1);
+        if (activeCardId === null) {
+            setSmoothieToEdit({ id: -1, name: "", ingredients: [{ quantity: "", name: "" }] });
+        }
     }, [activeCardId]);
 
     const handleClick = () => {
@@ -97,8 +100,6 @@ export const SmoothieCreateCard: React.FC = () => {
 
     const cancelAdd = () => {
         setActiveCardId(null);
-        setIsExpanded(false);
-        setSmoothieToEdit({ id: -1, name: "", ingredients: [{ quantity: "", name: "" }] });
     };
 
     return (

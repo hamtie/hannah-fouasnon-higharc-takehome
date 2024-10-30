@@ -62,7 +62,7 @@ export const SmoothieCard: React.FC<SmoothieProps> = ({ smoothie }) => {
 
             {/* Fixed Buttons at the Bottom */}
             <div className="absolute bottom-4 left-4 right-4 flex justify-end gap-x-6">
-                <button type="button" onClick={handleEdit} className="text-sm font-semibold text-gray-900">
+                <button type="button" onClick={handleEdit} disabled={(smoothieToEdit && smoothieToEdit.id === smoothie.id)} className="text-sm font-semibold text-gray-900">
                     Edit
                 </button>
                 <button
@@ -73,6 +73,6 @@ export const SmoothieCard: React.FC<SmoothieProps> = ({ smoothie }) => {
                     Delete
                 </button>
             </div>
-        </div>
+        </div >
     );
 };
